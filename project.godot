@@ -16,4 +16,4 @@ config/icon="uid://do3f35f7lkbhv"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/copilot-advanced/plugin.cfg", "res://addons/fuku/plugin.cfg", "res://addons/script-ide/plugin.cfg")
+enabled=PackedStringArray("res://addons/copilot-advanced/plugin.cfg", "res://addons/script-ide/plugin.cfg")

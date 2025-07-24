@@ -11,7 +11,7 @@ var states_table: Dictionary[String, BaseState]
 var current_state: BaseState
 
 func _ready() -> void:
-	for node in _get_all_children(self):
+	for node in _get_all_children($States):
 		if(node is BaseState):
 			# validation
 			if states_table.get(node.id):
