@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ciuofriwl5oxm"]
+
+[ext_resource type="Script" uid="uid://dj5kvllwsknoa" path="res://addons/state-machinery-v2/core/model_layer/database/backend_animation_database.gd" id="1_5drb1"]
+
+[node name="BackendAnimationDatabase" type="AnimationPlayer"]
+script = ExtResource("1_5drb1")

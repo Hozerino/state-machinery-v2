@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://dam8invjcexqb"]
+
+[ext_resource type="Script" uid="uid://c4f1q2eelhsdt" path="res://addons/state-machinery-v2/project_initializer/controller/placeholder_controller.gd" id="1_pw17k"]
+[ext_resource type="Script" uid="uid://bqc1c23glujyw" path="res://addons/state-machinery-v2/project_initializer/service/placeholder_input_gatherer_service.gd" id="2_dvtfe"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_pw17k"]
+
+[node name="PlaceholderController" type="CharacterBody3D"]
+script = ExtResource("1_pw17k")
+
+[node name="CollisionShape" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_pw17k")
+
+[node name="PlaceholderInputGathererService" type="Node" parent="."]
+script = ExtResource("2_dvtfe")

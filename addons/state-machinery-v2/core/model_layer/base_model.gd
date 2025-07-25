@@ -1,8 +1,6 @@
 extends Node3D
 class_name BaseModel
 
-@onready var animator: AnimationPlayer = $AnimationPlayer
-@onready var skeleton: Skeleton3D = $AnimationPlayer
 @onready var backend_animation_database: BackendAnimationDatabase = $BackendAnimationDatabase
 
 @export var stats: BaseModelStats
@@ -31,7 +29,6 @@ func switch_to(next_state_id : String):
 	current_state.exit()
 	current_state = states_table[next_state_id]
 	current_state.enter()
-	animator.play(current_state.animation_name)
 
 func _get_all_children(node: Node) -> Array:
 	var _nodes: Array = []

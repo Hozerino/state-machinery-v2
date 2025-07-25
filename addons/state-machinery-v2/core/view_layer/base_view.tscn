@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b334h131rsfjv"]
+
+[ext_resource type="Script" uid="uid://dqsud463pri5e" path="res://addons/state-machinery-v2/core/view_layer/base_view.gd" id="1_fxpqk"]
+
+[node name="BaseView" type="Node3D"]
+script = ExtResource("1_fxpqk")

@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://buybyb6l2sivo"]
+
+[ext_resource type="Script" uid="uid://cdte7ffq06oy6" path="res://addons/state-machinery-v2/core/model_layer/base_model.gd" id="1_eynbs"]
+[ext_resource type="Script" uid="uid://dj5kvllwsknoa" path="res://addons/state-machinery-v2/core/model_layer/database/backend_animation_database.gd" id="2_u0ypw"]
+
+[node name="BaseModel" type="Node3D"]
+script = ExtResource("1_eynbs")
+
+[node name="BackendAnimationDatabase" type="AnimationPlayer" parent="."]
+script = ExtResource("2_u0ypw")
+
+[node name="States" type="Node" parent="."]
