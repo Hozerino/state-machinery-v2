@@ -2,7 +2,6 @@ class_name BaseState
 extends Node
 
 @export var id: String
-@export var animation_name: String
 
 #region Dependency Injection
 var backend_animation_database: BackendAnimationDatabase
