@@ -23,7 +23,7 @@ const MAX_LENGTH = 8500
 class Message:
 	var role: String
 	var content: String
-	
+
 	func get_json():
 		return {
 			"role": role,
@@ -52,7 +52,7 @@ func _send_user_prompt(user_prompt, user_suffix):
 func format_prompt(prompt, suffix):
 	var messages = []
 	var system_prompt = SYSTEM_TEMPLATE
-	
+
 	var combined_prompt = prompt + suffix
 	var diff = combined_prompt.length() - MAX_LENGTH
 	if diff > 0:
@@ -62,17 +62,17 @@ func format_prompt(prompt, suffix):
 			prompt = prompt.substr(diff - suffix.length())
 			suffix = ""
 	var user_prompt = prompt + INSERT_TAG + suffix
-	
+
 	var msg = Message.new()
 	msg.role = ROLES.SYSTEM
 	msg.content = system_prompt
 	messages.append(msg.get_json())
-	
+
 	msg = Message.new()
 	msg.role = ROLES.USER
 	msg.content = user_prompt
 	messages.append(msg.get_json())
-	
+
 	return messages
 
 func get_completion(messages, prompt, suffix):
@@ -81,7 +81,7 @@ func get_completion(messages, prompt, suffix):
 		"messages": messages,
 		"temperature": 0.7,
 		"max_tokens": 500,
-		"stop": "\n\n" if allow_multiline else "\n" 
+		"stop": "\n\n" if allow_multiline else "\n"
 	}
 	var headers = [
 		"Content-Type: application/json",
@@ -108,4 +108,3 @@ func on_request_completed(result, response_code, headers, body, pre, post, http_
 	if is_instance_valid(http_request):
 		http_request.queue_free()
 	emit_signal("completion_received", completion.content, pre, post)
-

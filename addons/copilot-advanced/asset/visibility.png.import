@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://46u41pf6bc07"
-path="res://.godot/imported/visibility.png-98178b10566838ff28f85051cdf81d99.ctex"
+path="res://.godot/imported/visibility.png-d3c63a3b6426601e8a506cdaad9aba0c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/copilot-advanced/asset/visibility.png"
-dest_files=["res://.godot/imported/visibility.png-98178b10566838ff28f85051cdf81d99.ctex"]
+source_file="res://addons/state-machinery-v2/addons/copilot-advanced/asset/visibility.png"
+dest_files=["res://.godot/imported/visibility.png-d3c63a3b6426601e8a506cdaad9aba0c.ctex"]
 
 [params]
 

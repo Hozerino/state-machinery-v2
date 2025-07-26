@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dgko4rse8ssdn"
-path="res://.godot/imported/refresh.png-d47441cc11b0761efc87fd8baf12f201.ctex"
+path="res://.godot/imported/refresh.png-349067d882a00b805b86398b5f12cd7e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/copilot-advanced/asset/refresh.png"
-dest_files=["res://.godot/imported/refresh.png-d47441cc11b0761efc87fd8baf12f201.ctex"]
+source_file="res://addons/state-machinery-v2/addons/copilot-advanced/asset/refresh.png"
+dest_files=["res://.godot/imported/refresh.png-349067d882a00b805b86398b5f12cd7e.ctex"]
 
 [params]
 

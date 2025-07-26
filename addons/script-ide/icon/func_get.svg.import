@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c2a3aowyhxj5x"
-path="res://.godot/imported/func_get.svg-093f0ce02889d1f102ff9cc3e7f72654.ctex"
+path="res://.godot/imported/func_get.svg-28b557d8c4c2be812a7e07584d6a858b.ctex"
 metadata={
 "has_editor_variant": true,
 "vram_texture": false
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://addons/script-ide/icon/func_get.svg"
-dest_files=["res://.godot/imported/func_get.svg-093f0ce02889d1f102ff9cc3e7f72654.ctex"]
+source_file="res://addons/state-machinery-v2/addons/script-ide/icon/func_get.svg"
+dest_files=["res://.godot/imported/func_get.svg-28b557d8c4c2be812a7e07584d6a858b.ctex"]
 
 [params]
 

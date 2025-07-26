@@ -33,7 +33,7 @@ signal auth_token_retrieved
 class Message:
 	var role: String
 	var content: String
-	
+
 	func get_json():
 		return {
 			"role": role,
@@ -61,7 +61,7 @@ func _send_user_prompt(user_prompt, user_suffix):
 func format_prompt(prompt, suffix):
 	var messages = []
 	var system_prompt = SYSTEM_TEMPLATE
-	
+
 	var combined_prompt = prompt + suffix
 	var diff = combined_prompt.length() - MAX_LENGTH
 	if diff > 0:
@@ -71,19 +71,19 @@ func format_prompt(prompt, suffix):
 			prompt = prompt.substr(diff - suffix.length())
 			suffix = ""
 	var user_prompt = prompt + INSERT_TAG + suffix
-	
+
 	var msg = Message.new()
 	msg.role = ROLES.SYSTEM
 	msg.content = system_prompt
 	messages.append(msg.get_json())
-	
+
 	msg = Message.new()
 	msg.role = ROLES.USER
 	msg.content = user_prompt
 	messages.append(msg.get_json())
-	
+
 	return messages
-	
+
 func gen_hex_str(length: int) -> String:
 	var rng = RandomNumberGenerator.new()
 	var result = PackedByteArray()
@@ -134,7 +134,7 @@ func get_completion(messages, prompt, suffix):
 	if not auth_token:
 		get_auth()
 		await auth_token_retrieved
-	
+
 	var body = {
 		"model": model,
 		"messages": messages,
@@ -176,7 +176,7 @@ func store_config():
 	var config = ConfigFile.new()
 	config.set_value("auth", "machine_id", machine_id)
 	config.save_encrypted_pass(PREFERENCES_STORAGE_NAME, PREFERENCES_PASS)
-	
+
 func load_config():
 	var config = ConfigFile.new()
 	var err = config.load_encrypted_pass(PREFERENCES_STORAGE_NAME, PREFERENCES_PASS)
