@@ -47,4 +47,3 @@ func inject_dependencies():
 	for state: State in states_table.values():
 		state.backend_animation_database = backend_animation_database
 		state.model = self
-		

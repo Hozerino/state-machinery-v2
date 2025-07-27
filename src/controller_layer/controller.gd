@@ -11,4 +11,3 @@ class_name Controller
 
 func _ready():
 	view.model = model
-	
