@@ -6,13 +6,16 @@ class_name Model
 @export var stats: ModelStats
 
 var states_table: Dictionary[String, State]
-# Create a dict like this
-#{
-	#"STATE_ID": 0,
-	#"IDLE": 0,
-	#"anything more important, higher": 10,
-	#"states strong like falling": 20
-#}
+
+var states_priority_table: Dictionary[String, int] = {}
+# create something like this example. the "stronger" the state is, the higher it goes
+#    {
+		#"IDLE": 0,
+		#"WALK": 1,
+		#"SPRINT": 2,
+		#"MIDAIR": 20
+	#}
+
 var current_state: State
 
 signal on_state_changed
@@ -25,6 +28,7 @@ func _ready() -> void:
 				push_error("Oops, node with id=%s already registered." % [node.id])
 			states_table[node.id] = node
 	assert(states_table.size() > 0, "No states for the model " + str(get_path()))
+	assert(states_priority_table.size() > 0, "Please create a priority table in " + str(get_path()))
 	pass
 
 func tick(input : InputData, delta : float):
