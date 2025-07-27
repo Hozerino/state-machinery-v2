@@ -10,7 +10,5 @@ class_name Controller
 @onready var view: View = $View
 
 func _ready():
-	inject_dependencies()
-
-func inject_dependencies():
 	view.model = model
+	

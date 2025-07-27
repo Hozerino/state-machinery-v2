@@ -1,16 +1,16 @@
 extends State
 
-# Pode criar coisas como:
-# StateComAnimacao extends State
-# var animation_name: String
+# @export var SPEED ou coisa assim
 
-# Se o model tiver Skeleton/AnimationPlayer, dar model.animator.play(self.animation_name) aqui!
-func _enter():
+func enter():
 	pass
 
-func _exit():
+func exit():
 	pass
 
-# Atualizacao em geral enquanto o player ta no estado
-func _update(input_data: InputData, delta: float):
+func update(input_data: InputData, delta: float):
 	pass
+
+func should_transition_to(input_data: InputData) -> String:
+	return self.id
+
