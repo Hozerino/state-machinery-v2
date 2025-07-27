@@ -13,4 +13,3 @@ func update(input_data: InputData, delta: float):
 
 func should_transition_to(input_data: InputData) -> String:
 	return self.id
-

@@ -11,6 +11,7 @@ class_name Controller
 
 func _ready():
 	view.model = model
+	assert(model.current_state != null, "Please be sure to set an initial state for the model. If you already did that, sorry")
 
 func _physics_process(delta: float) -> void:
 	var input: InputData = input_gatherer_service.gather_input()
