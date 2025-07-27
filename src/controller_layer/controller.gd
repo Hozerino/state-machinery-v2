@@ -11,3 +11,7 @@ class_name Controller
 
 func _ready():
 	view.model = model
+
+func _physics_process(delta: float) -> void:
+	var input: InputData = input_gatherer_service.gather_input()
+	model.tick(input, delta)
