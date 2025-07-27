@@ -29,6 +29,7 @@ func _ready() -> void:
 			states_table[node.id] = node
 	assert(states_table.size() > 0, "No states for the model " + str(get_path()))
 	assert(states_priority_table.size() > 0, "Please create a priority table in " + str(get_path()))
+	inject_dependencies()
 	pass
 
 func tick(input : InputData, delta : float):
@@ -39,7 +40,7 @@ func tick(input : InputData, delta : float):
 	stats.tick(delta)
 
 func switch_to(next_state_id : String):
-	print("%s -> %s" % [current_state.id % next_state_id] )
+	print("%s -> %s" % [current_state.id, next_state_id] )
 	current_state.exit()
 	current_state = states_table[next_state_id]
 	current_state.enter()

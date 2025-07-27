@@ -11,5 +11,6 @@ config_version=5
 [application]
 
 config/name="State Machinery v2"
+run/main_scene="uid://bihcmmmy3u0xy"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
