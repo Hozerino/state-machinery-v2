@@ -9,13 +9,10 @@ var model: Model
 #endregion
 
 ######## Core ########
-func update(input_data: InputData, delta: float):
-	pass
-
 func default_transition_logic(input_data: InputData) -> String:
 	if(self.DEFAULT_DURATION > 0 and self.execution_time() > DEFAULT_DURATION):
 		print("total duration reached for state %s, changing" % self.name)
-		return input_data.desired_states[0]
+		return best_affordable_state(input_data)
 
 	check_combos(input_data)
 
@@ -27,10 +24,20 @@ func default_transition_logic(input_data: InputData) -> String:
 
 func enter():
 	_state_enter_time = Time.get_unix_time_from_system()
+	model.stats.pay(self)
 	self._enter()
 
 func exit():
 	self._exit()
+
+
+func best_affordable_state(input : InputData) -> String:
+		model.sort_by_priority(input.desired_states)
+		for state_name in input.desired_states:
+			if model.stats.can_pay(model.states_table[state_name]):
+				return state_name
+		assert(false, "broke ass mf, cant pay ANY state???")
+		return self.id
 
 ######## Combos ########
 var combos: Array[Combo] = []
@@ -86,4 +93,7 @@ func _enter():
 	pass
 
 func _exit():
+	pass
+
+func update(input: InputData, delta: float):
 	pass
