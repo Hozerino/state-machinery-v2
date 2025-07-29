@@ -1,7 +1,6 @@
 class_name State
 extends Node
 
-@export var id: String
 @export var DEFAULT_DURATION = -1
 
 #region Dependency Injection
@@ -43,10 +42,10 @@ func initialize_combos():
 			combos.append(child)
 			child.from_state = self
 
-# TODO originalmente, isso aqui coloca na queue, mas como nao fiz nada de queue aqui, vou forcar o move
 func check_combos(input: InputData) -> String:
 	for combo: Combo in combos:
-		if combo.meets_trigger_requirements(input):
+		if combo.meets_trigger_requirements(input) and model.stats.can_pay(combo.to_state):
+			# TODO usar queue no lugar de forced, mas ai precisa fazer queue timing etc
 			try_force_state(combo.to_state.name)
 	return self.name
 
