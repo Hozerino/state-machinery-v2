@@ -2,14 +2,15 @@ extends State
 
 # @export var SPEED ou coisa assim
 
-func enter():
+# os metodos enter() e exit() ja existem, se mexer neles vai ferrar a logica de get_progress
+func _enter():
 	pass
 
-func exit():
+func _exit():
 	pass
 
 func update(input_data: InputData, delta: float):
 	pass
 
-func should_transition_to(input_data: InputData) -> String:
+func _state_transition_logic(input_data: InputData) -> String:
 	return self.id

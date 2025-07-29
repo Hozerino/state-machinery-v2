@@ -1,15 +1,20 @@
 class_name BackendAnimationDatabase extends AnimationPlayer
 
-# TODO implementar!
-# tentar linkar state com animacao mas de um jeito pratico de editar e consultar, tipo:
+# isso eh muito game-dependent, mas quando vc precisar, usa alguma implementacao disso...
+# eu vou deixar a implementacao de BinaryBackendAnimationDatabase, q so tem true e false pra cada state
+# mas vc pode fazer um com AnimationPlayer que use as flags (qm sabe um dia eu meto essa)
 
-### Durante a CRIAÇÃO: ###
-# quero linkar State WALK -> Animation WALK_FLAG
-# quero q seja facil de ver onde to botando as flags tlgd? ver a animacao tocando em uma janela e colcoar a flag em outra de um jeito facil
-# tem q testar esse workflow
+enum Flag {
+	#IS_VULNERABLE
+	# Coloca as vars aqui ^^
+	# se n quiser fazer assim, cria um metodo pra cada flag aqui na "interface"
+}
+# e no get_property_value, usar o flag_key: Flag, pra poder chamar como Flag.IS_PIPIPI
 
-### pra buscar:
-# db.get_flag_at(state_id, tempo: float)
-# e se eu nao quiser bool? :( dps eu faco outros tipos, tipo o de Vector3D
-func get_property_value(state_id: String, current_progress: float) -> bool:
-	return false
+
+func get_property_value(state_id: String, flag_key: Flag, current_progress: float, default_value: Variant) -> Variant:
+	assert(false, "Oops, you tried to call get_property_value(...) on a so called interface")
+	return default_value
+
+# se facilicar sua vida vc pode criar as func aqui na interface tbm
+#func is_vulnerable(state_id: String)
