@@ -12,9 +12,9 @@ enum Flag {
 # e no get_property_value, usar o flag_key: Flag, pra poder chamar como Flag.IS_PIPIPI
 
 
-func get_property_value(state_id: String, flag_key: Flag, current_progress: float, default_value: Variant) -> Variant:
+func get_property_value(state_name: String, flag_key: Flag, current_progress: float, default_value: Variant) -> Variant:
 	assert(false, "Oops, you tried to call get_property_value(...) on a so called interface")
 	return default_value
 
 # se facilicar sua vida vc pode criar as func aqui na interface tbm
-#func is_vulnerable(state_id: String)
+#func is_vulnerable(state_name: String)

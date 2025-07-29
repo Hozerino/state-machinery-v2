@@ -15,7 +15,7 @@ func update(input_data: InputData, delta: float):
 
 func default_transition_logic(input_data: InputData) -> String:
 	if(self.DEFAULT_DURATION > 0 and self.execution_time() > DEFAULT_DURATION):
-		print("total duration reached for state %s, changing" % self.id)
+		print("total duration reached for state %s, changing" % self.name)
 		return input_data.desired_states[0]
 
 	check_combos(input_data)
@@ -47,8 +47,8 @@ func initialize_combos():
 func check_combos(input: InputData) -> String:
 	for combo: Combo in combos:
 		if combo.meets_trigger_requirements(input):
-			try_force_state(combo.to_state.id)
-	return self.id
+			try_force_state(combo.to_state.name)
+	return self.name
 
 ######## Forced state ########
 var forced_state: String
@@ -81,7 +81,7 @@ func execution_is_between(start_time: float, end_time: float) -> bool:
 
 ######## Interface ########
 func _state_transition_logic(input_data: InputData) -> String:
-	return self.id
+	return self.name
 
 func _enter():
 	pass

@@ -13,4 +13,4 @@ func update(input_data: InputData, delta: float):
 	pass
 
 func _state_transition_logic(input_data: InputData) -> String:
-	return self.id
+	return self.name

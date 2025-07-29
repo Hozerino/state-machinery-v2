@@ -24,9 +24,9 @@ func _ready() -> void:
 	for node in Utils.get_all_children($States):
 		if(node is State):
 			# validation
-			if states_table.get(node.id):
-				assert(false, "Oops, node with id=%s already registered." % [node.id])
-			states_table[node.id] = node
+			if states_table.get(node.name):
+				assert(false, "Oops, node with id=%s already registered." % [node.name])
+			states_table[node.name] = node
 			node.initialize_combos()
 	assert(states_table.size() > 0, "No states for the model " + str(get_path()))
 	assert(states_priority_table.size() > 0, "Please create a priority table in " + str(get_path()))
@@ -34,16 +34,16 @@ func _ready() -> void:
 	pass
 
 func tick(input : InputData, delta : float):
-	var next_state_id :String = current_state.default_transition_logic(input)
-	if next_state_id != "" and current_state.id != next_state_id:
-		switch_to(next_state_id)
+	var next_state_name :String = current_state.default_transition_logic(input)
+	if next_state_name != "" and current_state.name != next_state_name:
+		switch_to(next_state_name)
 	current_state.update(input, delta)
 	stats.tick(delta)
 
-func switch_to(next_state_id : String):
-	print("%s -> %s" % [current_state.id, next_state_id] )
+func switch_to(next_state_name : String):
+	print("%s -> %s" % [current_state.name, next_state_name] )
 	current_state.exit()
-	current_state = states_table[next_state_id]
+	current_state = states_table[next_state_name]
 	current_state.enter()
 	on_state_changed.emit()
 
