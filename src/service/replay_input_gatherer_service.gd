@@ -18,14 +18,10 @@ func gather_input() -> InputData:
 	return response
 
 func _ready() -> void:
-	if replay_file.is_empty():
-		push_error("No replay file specified!")
-		return
+	assert(!replay_file.is_empty(), "No replay file specified!")
 
 	file = FileAccess.open(replay_file, FileAccess.READ)
-	if not file:
-		push_error("Failed to open replay file: %s" % replay_file)
-		return
+	assert(file != null, "Failed to open replay file: %s" % replay_file)
 
 func _dict_to_vector2(dict: Dictionary) -> Vector2:
 	return Vector2(dict['x'], dict['y'])
