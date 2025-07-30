@@ -15,6 +15,9 @@ var states_priority_table: Dictionary[String, int] = {}
 		#"SPRINT": 2,
 		#"MIDAIR": 20
 	#}
+#
+# Also, if you do this on another class on _ready(), do not forget to call super._ready() AFTER setting the table!
+
 
 var current_state: State
 
@@ -51,3 +54,12 @@ func inject_dependencies():
 	for state: State in states_table.values():
 		state.backend_animation_database = backend_animation_database
 		state.model = self
+
+func sort_by_priority(desired_states: Array[String]):
+	desired_states.sort_custom(_custom_priority_sort)
+
+func _custom_priority_sort(a: String, b: String) -> bool:
+	return states_priority_table.get(a, 0) > states_priority_table.get(b, 0)
+
+func get_priority(state_name: String):
+	return states_priority_table.get(state_name, -1)
