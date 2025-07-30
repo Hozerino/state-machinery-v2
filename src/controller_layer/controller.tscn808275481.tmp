@@ -1,11 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://bihcmmmy3u0xy"]
+[gd_scene load_steps=7 format=3 uid="uid://bihcmmmy3u0xy"]
 
 [ext_resource type="Script" uid="uid://dgenlyytgneox" path="res://src/controller_layer/controller.gd" id="1_bajro"]
 [ext_resource type="Script" uid="uid://ui1y1fnlpwyf" path="res://src/service/input_gatherer_service.gd" id="2_pa2rv"]
 [ext_resource type="Script" uid="uid://d7ttk3g8lna2" path="res://src/model_layer/model.gd" id="3_hsrgm"]
 [ext_resource type="Script" uid="uid://dnrawwh8w26n0" path="res://src/model_layer/database/backend_animation_database.gd" id="4_vupfu"]
 [ext_resource type="Script" uid="uid://c08axuvr0uggt" path="res://src/view_layer/view.gd" id="5_482uw"]
-[ext_resource type="Script" uid="uid://cgis5qfy432r0" path="res://src/service/input_recorder_service.gd" id="6_hsrgm"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0fsrk"]
 
@@ -28,6 +27,3 @@ script = ExtResource("4_vupfu")
 
 [node name="View" type="Node3D" parent="."]
 script = ExtResource("5_482uw")
-
-[node name="InputRecorderService" type="Node" parent="."]
-script = ExtResource("6_hsrgm")
